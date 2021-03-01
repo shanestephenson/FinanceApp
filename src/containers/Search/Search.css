@@ -13,3 +13,8 @@ input {
 button {
   margin-left: 10px;
 }
+
+.Input {
+  color: white !important;
+  width: 400px;
+}

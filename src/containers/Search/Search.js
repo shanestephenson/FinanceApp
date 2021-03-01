@@ -1,6 +1,13 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+
+import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+
 import './Search.css';
+import SimpleCard from '../../UI/Card';
 
 const Search = props => {
   
@@ -30,9 +37,11 @@ const Search = props => {
   return (
     <div className="Search">
       <div>
-        <input type="text" placeholder="Ticker" onChange={e => setCurrentSearch(e.target.value)} />
-        <button onClick={performSearch}>Search</button>
+        <TextField color="secondary" className="Input" onChange={e => setCurrentSearch(e.target.value)} />
+        <Button style={{marginLeft: '10px'}} variant="contained" color="secondary" onClick={performSearch}><SearchIcon /></Button>
       </div>
+      <br />
+      <SimpleCard />
      
       {closingPrice > 0 && 
         <div>
